@@ -121,7 +121,7 @@
                         <h4>language: <span>english, malayalam</span></h4>
                         <h4>work: <span>Ecommerce developer</span></h4>
                         <h4>Visa Status: <span>Spouse Visa</span></h4>
-                        <a href="assets/images/Home/Ecommerce-Specialist.docx" class="btn">download CV <i class="fas fa-download"></i></a>
+                        <a href="assets/images/Home/Ecommerce-Specialist.docx" class="btn" id="downloadCV">download CV <i class="fas fa-download"></i></a>
                     </div>
 
                     <div class="counting">
@@ -684,9 +684,19 @@
           });
           e.preventDefault();
         });
+        
+        $('#downloadCV').on('click', function (e) {
+            e.preventDefault(); // prevent redirect
+            const fileUrl = $(this).attr('href');
+            const link = $('<a>')
+            .attr('href', fileUrl)
+            .attr('download', 'Ecommerce-Specialist.docx')
+            .appendTo('body');
+            link[0].click();
+            link.remove();
+        });
     </script>
 
 </body>
 
 </html>
-
