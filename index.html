@@ -728,6 +728,14 @@
 
     <!-- Contact-Form Script -->
     <script>
+          function openRefLink(el) {
+            var url = $(el).attr('ref'); // get the ref attribute value
+            if (url) {
+                window.open(url, '_blank'); // open in new tab/window
+            } else {
+                //alert('No URL found!');
+            }
+        }
         jQuery('#contactUs-Form').on('submit',function(e){
           jQuery('#msg').html('');
           jQuery('#submit').html('Please wait');
@@ -761,3 +769,4 @@
 </body>
 
 </html>
+
